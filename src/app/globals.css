@@ -17,11 +17,15 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+}
+
+pre {
+  background-color: #333333;
+  padding: 10px 25px;
+  border-radius: 6px;
+}
+
+code {
+  background-color: #333333;
+  color: #f8f8f2;
 }
