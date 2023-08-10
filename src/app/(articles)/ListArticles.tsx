@@ -1,7 +1,13 @@
 import { getArticles } from "../services/articles";
 
 const ListArticles = async () => {
-    const articles = await getArticles()
+    const articles = await getArticles('/articles')
+
+    const formatDate = (dateString: string) => {
+        const date = new Date(dateString);
+        const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+        return date.toLocaleDateString('en-US', options);
+    };
 
     return (
         <div className="grid grid-cols-4 gap-4">
@@ -10,7 +16,7 @@ const ListArticles = async () => {
                     <div className="bg-white p-4 px-8 cursor-pointer">
                         <article className="flex max-w-xl flex-col items-start justify-between text-gray-600">
                             <div className="flex items-center gap-x-4 text-xs">
-                                <p>{attributes.createdAt}</p>
+                                <p>Publicado: {formatDate(attributes.createdAt)}</p>
                             </div>
                             <div className="group relative">
                                 <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
