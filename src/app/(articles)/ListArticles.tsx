@@ -8,8 +8,8 @@ const ListArticles = async () => {
         <div className="grid lg:grid-cols-4 gap-4">
             {
                 articles.map(({ attributes, id }: any) => (
-                    <div className="bg-black p-4 px-8 cursor-pointer" key={id}>
-                        <article className="flex max-w-xl flex-col items-start justify-between text-white">
+                    <div className="relative h-full group cursor-pointer overflow-hidden border rounded-lg text-left border-scale-500 hover:border-scale-700 bg-white dark:bg-scale-300 transition" key={id}>
+                        <article className="flex max-w-xl flex-col items-start justify-between p-8">
                             <div className="flex items-center gap-x-4 text-xs">
                                 <p>Publicado: {formatDate(attributes.createdAt)}</p>
                             </div>
